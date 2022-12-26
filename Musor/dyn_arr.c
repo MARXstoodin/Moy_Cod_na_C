@@ -2,32 +2,34 @@
 
 typedef struct 
 {
-	int* arr;
-	int cap;
-	int max;
+	int i;
+	int arr[];
 }din_arr;
 	
 int main()
 {
 	int i;
 	din_arr array;
-	scanf("%d", &i);
-	scanf("%d", &array.arr[i]);
-	scanf("%d", &array.max);
-	append(array);
-	for (i=0; i < array.max ; i++)
+	scanf("%d", &array.i);
+	while (1)
 	{
-		printf("%d\n", array.arr[i]);
+		scanf("%d", &i);
+		scanf("%d", &array.arr[i-1]);
+		if (i > array.i && i>0)
+		{
+			while (array.i != i)
+			{
+				array.i++;
+			}
+		}
+		printf("\n");
+		for (i=0; i < array.i ; i++)
+		{
+			printf("%d\n", array.arr[i]);
+		}
+		printf("\n");
 	}
+	
 	return 0;
 }
 
-void append(din_arr array, int new)
-{
-	while (array.cap < 1)
-	{
-		array.max++;
-		array.cap = array.max - *array.arr;
-		printf("array.max++;");
-	}
-}
