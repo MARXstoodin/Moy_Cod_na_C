@@ -19,6 +19,7 @@ int main()
 		{
 			while (array.i != i)
 			{
+				//array.arr[i] = (int*)malloc(1);
 				array.i++;
 			}
 		}
@@ -32,4 +33,3 @@ int main()
 	
 	return 0;
 }
-
