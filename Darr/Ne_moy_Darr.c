@@ -66,8 +66,6 @@ int main() {
 	push_back(&a, 1);
 	push_back(&a, 2);
 	push_back(&a, 3);
-	scanf("%d", schitat);
-	push_back(&a, schitat);
  
 	printf("%d %d %d", get_elem(a, 0), get_elem(a, 1), get_elem(a, 2), get_elem(a, 3));
  
