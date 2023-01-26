@@ -15,12 +15,8 @@ typedef struct {
 	int* first_elem;
 } din_arr;
  
-din_arr init_din_arr(int size) {
+din_arr init_din_arr() {
 	din_arr a;
-	if (size < 0) {
-		ERROR = INVALID_ARGUMENT_ERROR;
-		return;
-	}
 	a.size = 0;
 	a.capacity = size;
 	a.first_elem = (int*)malloc(a.capacity * sizeof(int));
@@ -43,10 +39,13 @@ void push_back(din_arr* a, int element) {
 
 void print_all(din_arr* a)
 {
+	printf("Print\n");
 	int i;
+	printf("%d", a->size);
 	for (i = 0 ; i < a->size ; i++)
 	{
-		printf("%d ", get_elem(a, i));
+		printf("ban");
+		printf("%d ", a->first_elem[i]);
 	}
 	printf("\n");
 }
@@ -54,9 +53,9 @@ void print_all(din_arr* a)
 void continous_push_back(din_arr a)
 {
 	int scan;
-	scanf("%d", &scan);
-	if (scanf("%d", &scan))
+	if (!scanf("%d", &scan))
 	{
+		printf("%d\n", a.size);
 		return;
 	}
 	push_back(&a, scan);
@@ -75,11 +74,39 @@ int get_elem(din_arr a, int index) {
 }
  
 int main() {
-	din_arr a = init_din_arr(1);
+	int e = 1;
+	char input;
+	din_arr a = init_din_arr();
+	printf("Lyuboj ne chislovoj simvol ostanovit process\n");
+	
+	/*while (e)
+	{
+		scanf("%c", &input);
+		if(input == 'e')
+		{
+			e = 0;
+		}
+		else if (input == 'c')
+		{
+			clear_din_arr(a);
+		}
+		else if (input == 'p')
+		{
+			continous_push_back(a);
+		}
+		else if (input == 'a')
+		{
+			print_all(&a);
+		}
+	}*/
 	
 	continous_push_back(a);
 	
-	clear_din_arr(a);
+	printf("%d", a.size);
+	
+	print_all(&a);
+	
+	//clear_din_arr(a);
 	
 	return 0;
 }

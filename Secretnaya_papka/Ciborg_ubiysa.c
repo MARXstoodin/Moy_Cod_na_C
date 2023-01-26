@@ -4,8 +4,7 @@ int main()
 {
 	while(1)
 	{
-		printf("Hello");
-		//malloc(100);
+		malloc(1000);
 	}
 	return 0;
 }
