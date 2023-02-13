@@ -1,20 +1,21 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <time.h>
 #include <stdlib.h>
+#include <time.h>
+
 int main()
 {
+	time_t t;
 	int nomer;
 	int drawProv=0;
 	int nomProv;
-	int AImove[9] = {0,1,2,3,4,5,6,7,8};
 	bool win = false;
 	bool igrok1 = true;
 	bool isAI = false;
 	bool Aiselect = false;
+	srand((unsigned) time(&t));
 	char pole[9] = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
 	printf("7|8|9\n4|5|6\n1|2|3\n");
-	srand(time(NULL));
 	while (Aiselect == false)
 	{
 		printf("Chose number of players(1 or 2):");
@@ -52,12 +53,12 @@ int main()
 				pole[nomer-1] = 'O';
 			else
 				continue;
-		}else
+		}
+		else
 		{
-			
-			nomer = rand();
+			nomer = rand() % 9;
 			printf("%d", nomer);
-			if (pole[nomer] == AImove[4])
+			if (pole[nomer] == ' ')
 				pole[nomer] = 'O';
 			else
 				continue;
